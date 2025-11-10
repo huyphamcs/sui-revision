@@ -1,0 +1,78 @@
+/* Custom animations and transitions */
+
+/* Fade in animation for cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation for counter value */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Card entrance animation */
+[data-radix-scroll-area-viewport] > div {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Smooth color transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Loading spinner smooth rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Badge animation */
+[data-accent-color] {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Hover effects for cards */
+.rt-Card {
+  transition: all 0.3s ease-in-out;
+}
+
+.rt-Card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Counter value pulse on change */
+.counter-value {
+  animation: pulse 0.3s ease-in-out;
+}
